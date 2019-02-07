@@ -50,7 +50,6 @@ class MissionsViewModel(private val repository: MissionRepository) : ViewModel()
     // ViewModel's live data. The Activity/Fragment observer sees the change and updates it's UI
     // with the new value.
     private fun setFilter(trigger: FilterState) {
-        Timber.d("---> Updating the ViewModel with missionGroup ${trigger.javaClass.simpleName}")
         liveTrigger.value = trigger
     }
 
