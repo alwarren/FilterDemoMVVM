@@ -8,7 +8,6 @@ References:
 * LiveData - https://developer.android.com/topic/libraries/architecture/livedata
 * ViewModel - https://developer.android.com/topic/libraries/architecture/viewmodel
 * Transformations - https://developer.android.com/reference/android/arch/lifecycle/Transformations#switchmap
-* Fernando Cejas Clean Architecture - https://github.com/android10/Android-CleanArchitecture-Kotlin
 
 Development Environment
 
