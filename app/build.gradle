@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    defaultConfig {
+        applicationId "com.ntxdroid.filterdemo"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner deps.test.instrumentation
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.kotlin.stdlib
+    implementation deps.android.appcompat
+    implementation deps.kotlin.core
+    implementation deps.android.material
+    implementation deps.android.constraint_layout
+    implementation deps.android.legacy_support
+    implementation deps.android.vector_drawable
+    testImplementation deps.test.junit4
+    androidTestImplementation deps.test.runner
+    androidTestImplementation deps.test.espresso
+    // lifecycle
+    implementation deps.android.lifecycle_extensions
+    implementation deps.android.viewmodel
+    // timber
+    implementation deps.timber.base
+}
