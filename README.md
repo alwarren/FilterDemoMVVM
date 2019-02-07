@@ -7,6 +7,7 @@ Quick Links:
 * MissionsViewModel - https://git.io/fh9jx
 * MissionsFragment - https://git.io/fh9jp
 * MissionsAdapter - https://git.io/fh9jj
+* Demo Video - https://youtu.be/5xgn3ZnDgoo
 
 References:
 
