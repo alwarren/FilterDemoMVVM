@@ -43,15 +43,17 @@ class MissionsAdapter : AbstractListRecycler<Mission>() {
     class MissionViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), Binder<Mission> {
         private val colors = Injection.iconColors
         override fun bind(data: Mission, clickListener: (Mission) -> Unit) {
-            itemView.missionInitial.apply {
-                text = data.missionName[0].toString()
-                background.setColorFilter(Color.parseColor(colors[data.missionGroup]),
-                    PorterDuff.Mode.SRC_OVER)
+            with (itemView) {
+                missionInitial.apply {
+                    text = data.missionName[0].toString()
+                    background.setColorFilter(Color.parseColor(colors[data.missionGroup]),
+                        PorterDuff.Mode.SRC_OVER)
+                }
+                missionName.text = data.missionName
+                missionInitial.text = data.missionName[0].toString()
+                manufacturers.text = data.manufacturers.joinToString(", ")
+                setOnClickListener { clickListener(data) }
             }
-            itemView.missionName.text = data.missionName
-            itemView.missionInitial.text = data.missionName[0].toString()
-            itemView.manufacturers.text = data.manufacturers.joinToString(", ")
-            itemView.setOnClickListener { clickListener(data) }
         }
     }
 }
